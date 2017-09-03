@@ -1,0 +1,23 @@
+ClassyContextMenu is a jQuery plugin that makes it easy to add right-click
+context menu functionality to any web application. A context menu can help make
+a web application feel even more like a native application.
+
+    Supports keyboard control
+    Always stays in viewport (menus never open outside of the visible area)
+    Supports infinite amount of sub-menus
+    Enable disable items or entire menus
+    Add and remove items and let the menu refresh
+    Add separators between groups of similar items
+    Show non-menu items like images or forms
+    Supports right- or left-click control
+    Multiple elements can share menus
+    Menus automatically resize based on menu contents
+    Build menus with HTML or pass in a JavaScript object
+    Customizable callbacks for each menu (onLoad, onShow, onHide, and onSelect)
+
+@name ClassyContextMenu
+@package jQuery plugin
+@author Marius Stanciu - Sergiu <marius@class.pm>
+@website http://www.class.pm/
+@version 1.5.0
+@license MIT www.class.pm/LICENSE-MIT

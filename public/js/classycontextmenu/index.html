@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>ClassyContextMenu jQuery plugin | Class.PM</title>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic" />
+        <link rel="stylesheet" href="css/documentation.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jquery.hoverintent.js"></script>
+        <script src="js/jquery.classycontextmenu.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.classycontextmenu.min.css" />
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="main-container">
+                <div id="page-content">
+                    <div class="content-header">
+                        <div class="header-section">
+                            <h1>ClassyContextMenu<br><small>Context menus for your site, via jQuery!</small></h1>
+                        </div>
+                    </div>
+                    <ul class="breadcrumb breadcrumb-top">
+                        <li><a href="http://www.class.pm/"><i class="fa fa-home"></i> Class.PM</a></li>
+                        <li><a href="http://www.class.pm/#jquery">jQuery plugins</a></li>
+                        <li>ClassyContextMenu</li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Introduction</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <p>ClassyContextMenu is a <a href="http://www.jquery.com">jQuery</a> plugin written by <a href="http://www.class.pm">Marius Stanciu - Sergiu</a>, a plugin that makes it easy to add right-click context menu functionality to any web application. A context menu can help make a web application feel even more like a native application. <a class="simpleCallback" href="#">Right Click Me!</a></p>
+                                    <ul>
+                                        <li>supports keyboard control</li>
+                                        <li>always stays in viewport (menus never open outside of the visible area)</li>
+                                        <li>supports infinite amount of sub-menus</li>
+                                        <li>enable disable items or entire menus</li>
+                                        <li>add and remove items and let the menu refresh</li>
+                                        <li>add separators between groups of similar items</li>
+                                        <li>show non-menu items like images or forms</li>
+                                        <li>supports right- or left-click control</li>
+                                        <li>multiple elements can share menus</li>
+                                        <li>menus automatically resize based on menu contents</li>
+                                        <li>build menus with HTML or pass in a JavaScript object</li>
+                                        <li>customizable callbacks for each menu (onLoad, onShow, onHide, and onSelect)</li>
+                                    </ul>
+                                    <p>
+                                        <a href="http://www.class.pm/files/jquery-classycontextmenu.zip" class="btn btn-primary">
+                                            <i class="fa fa-folder-open"></i> Download it
+                                        </a>
+                                    </p>
+                                    <div class="alert alert-info">
+                                        <h4><i class="fa fa-info-circle"></i> License</h4>
+                                        This jQuery plugin is distributed under the <a href="http://www.class.pm/LICENSE-MIT">MIT license</a>. Enjoy!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Demo</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <br />
+                                    <div id="callbackmenu">
+                                        <ul>
+                                            <li id="MenuItem1"><img src="images/envelope-o_000000_16.png" /><a href="http://google.com">Menu Item 1</a></li>
+                                            <li class="disabled" id="MenuItem2"><a href="#Item2">Menu Item 2</a></li>
+                                            <li id="MenuItem3"><a href="#Item3">Menu Item 3</a>
+                                                <ul>
+                                                    <li id="MenuItem3.1"><a href="#Item3.1">Menu Item 3.1</a></li>
+                                                    <li id="MenuItem3.2"><a href="#Item3.2">Menu Item 3.2</a></li>
+                                                    <li id="MenuItem3.3"><a href="#Item3.3">Menu Item 3.3</a>
+                                                        <ul>
+                                                            <li id="MenuItem3.3.1"><a href="#Item3.3.1">Menu Item 3.3.1</a></li>
+                                                            <li id="MenuItem3.3.2"><a href="#Item3.3.2">Menu Item 3.3.2</a></li>
+                                                            <li id="MenuItem3.3.3"><a href="#Item3.3.3">Menu Item 3.3.3</a></li>
+                                                            <li id="MenuItem3.3.4"><a href="#Item3.3.4">Menu Item 3.3.4</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li id="MenuItem3.4"><a href="#Item3.4">Menu Item 3.4</a></li>
+                                                </ul>
+                                            </li>
+                                            <li id="MenuItem4" class="separator"><a href="#Item4">Menu Item 4</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn btn-danger callback1">Right Click Me</div>
+                                    <br /><br />
+                                    <div class="btn btn-success callback2">Left Click Me</div>
+                                    <br /><br />
+                                    <script>
+                                        $(document).ready(function() {
+                                            $(".callback1").ClassyContextMenu({
+                                                menu: 'callbackmenu',
+                                                onSelect: function(e) {
+                                                    alert("You clicked on a menu item!\n\nThe item's action is: " + e.action + "\nThe item's id is: " + e.id);
+                                                }
+                                            });
+                                            $(".callback2").ClassyContextMenu({
+                                                menu: 'callbackmenu',
+                                                mouseButton: 'left',
+                                                onSelect: function(e) {
+                                                    alert("You clicked on a menu item!\n\nThe item's action is: " + e.action + "\nThe item's id is: " + e.id);
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Setup</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <p>First you need to include the jQuery library, since ClassyContextMenu is a plugin. You can download it from the <a href="http://www.jquery.com">jQuery website</a> or link it directly from the Google CDN.</p>
+                                    <pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;</pre>
+                                    <p>Secondly, you need to include the jQuery ClassyContextMenu javascript and the css file into your page. You can do it by adding the code below to your page.</p>
+                                    <pre>&lt;script src="js/jquery.classycontextmenu.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/jquery.classycontextmenu.min.css" /&gt;</pre>
+                                    <p>Next, you implement the structure for the menu. This can be done two ways: either pure HTML using lists and divs OR you can pass a JavaScript object to the <em>ClassyContextMenu()</em> function. I'll present the first method here.</p>
+                                    <pre>&lt;div id="simpleCallbackMenu"&gt;
+    &lt;ul&gt;
+        &lt;li id="MenuItem1"&gt;&lt;img src="images/envelope-o_000000_16.png" /&gt;&lt;a href="#Item1"&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li id="MenuItem2"&gt;&lt;a href="#Item2"&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li id="MenuItem3"&gt;&lt;a href="#Item3"&gt;Menu Item 3&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li id="MenuItem3.1"&gt;&lt;a href="#Item3.1"&gt;Menu Item 3.1&lt;/a&gt;&lt;/li&gt;
+            &lt;li id="MenuItem3.2"&gt;&lt;a href="#Item3.2"&gt;Menu Item 3.2&lt;/a&gt;&lt;/li&gt;
+            &lt;li id="MenuItem3.3"&gt;&lt;a href="#Item3.3"&gt;Menu Item 3.3&lt;/a&gt;
+            &lt;ul&gt;
+                &lt;li id="MenuItem3.3.1"&gt;&lt;a href="#Item3.3.1">Menu Item 3.3.1&lt;/a&gt;&lt;/li&gt;
+                &lt;li id="MenuItem3.3.2"&gt;&lt;a href="#Item3.3.2">Menu Item 3.3.2&lt;/a&gt;&lt;/li&gt;
+                &lt;li id="MenuItem3.3.3"&gt;&lt;a href="#Item3.3.3">Menu Item 3.3.3&lt;/a&gt;&lt;/li&gt;
+                &lt;li id="MenuItem3.3.4"&gt;&lt;a href="#Item3.3.4">Menu Item 3.3.4&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li id="MenuItem3.4"&gt;&lt;a href="#Item3.4"&gt;Menu Item 3.4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li id="MenuItem4" class="separator"&gt;&lt;a href="#Item4"&gt;Menu Item 4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre>
+                                    <p>As the last step, you trigger the ClassyContextMenu function on the element you just created. In this case, we trigger the menu on the element with the id <em>simpleCallback</em> and we build the menu from the element with the id <em>simpleCallbackMenu</em>.</p>
+                                    <pre>$("#simpleCallback").ClassyContextMenu({
+    menu: 'simpleCallbackMenu'
+});</pre>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block">
+                                <div class="block-title">
+                                    <h2>Options</h2>
+                                </div>
+                                <div class="clearfix">
+                                    <ul class="fa-ul">
+                                        <li>
+                                            <h3>Parameters</h3>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">menu</span> - id of the element containing the menu DOM structure or an array with the menu items
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">mouseButton</span> - sets which button causes the menu to appear, can be <span class="label label-success">left</span> or <span class="label label-success">right</span>, default is <span class="label label-primary">right</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">minWidth</span> - minimal width of the menu in pixels, default is <span class="label label-primary">120</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">maxWidth</span> - maximum width of the menu, 0 means no maximum, default is <span class="label label-primary">0</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">delay</span> - the delay in milliseconds before the sub-menu vanishes, default is <span class="label label-primary">500</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">keyboard</span> - enables or disables the keyboard control, can be <span class="label label-success">true</span> or <span class="label label-success">false</span>, default is <span class="label label-primary">true</span>
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">hoverIntent</span> - should use the hoverIntent jQuery plugin, can be <span class="label label-success">true</span> or <span class="label label-success">false</span>, default is <span class="label label-primary">true</span>
+                                        </li>
+                                        <li>
+                                            <h3>Callbacks</h3>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">onSelect</span> - callback function to be called when a user clicks on a menu item
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">onLoad</span> - callback function to be called when the menu is done building
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">onShow</span> - callback function to be called when the menu is shown
+                                        </li>
+                                        <li>
+                                            <span class="label label-danger">onHide</span> - callback function to be called when the menu is hidden
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="clearfix">
+                    <div class="pull-left">
+                        <span>2005 - 2014</span> © <a href="http://www.class.pm" target="_blank">Class.PM</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-30825160-1', 'class.pm');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>
